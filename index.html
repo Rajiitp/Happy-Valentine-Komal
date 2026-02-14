@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Mamta ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+            text-align: center;
+
+            background: linear-gradient(-45deg, #ff4e50, #ff0080, #7928ca, #ff6a00);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 700px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.6);
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 14px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .yes {
+            background: linear-gradient(45deg, #ff0055, #ff4081);
+            color: white;
+            box-shadow: 0 0 20px rgba(255,0,85,0.7);
+        }
+
+        .yes:hover {
+            transform: scale(1.1);
+        }
+
+        .no {
+            background: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        /* Thank You Screen */
+        .thank-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .thank-card {
+            max-width: 750px;
+            text-align: center;
+        }
+
+        .thank-card h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .thank-card h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .thank-card p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+    <div class="content">
+        <h1>Happy Valentine Komal ❤️</h1>
+        <h2>Will you be my Valentine? 💖</h2>
+
+        <p>
+            💕 Hi Komal, I really like you 💕 <br><br>
+            💖 I promise I will never hurt you and will always support you entire life 💖
+        </p>
+
+        <div class="buttons">
+            <button class="yes" onclick="yesClicked()">Yes 💖</button>
+            <button class="no" id="noBtn" onclick="moveButton()">No 😜</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const noButton = document.getElementById("noBtn");
+    let isFirstClick = true;
+
+    function moveButton() {
+        if (isFirstClick) {
+            noButton.style.position = "absolute";
+            isFirstClick = false;
+        }
+
+        const maxX = window.innerWidth - noButton.offsetWidth;
+        const maxY = window.innerHeight - noButton.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+    }
+
+    function yesClicked() {
+        document.body.innerHTML = `
+            <div class="thank-container">
+                <div class="thank-card">
+                    <h1>💖 Thanks for being my Valentine Komal 💖</h1>
+                    <h2>You made me the happiest person today 💖</h2>
+                    <p>I promise to always care for you and never hurt you entire life 💖</p>
+                </div>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
